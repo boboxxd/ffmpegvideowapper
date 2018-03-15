@@ -15,7 +15,7 @@ public:
     void mouseDoubleClickEvent(QMouseEvent *e);
     ~HHVideoWidget();
 public slots:
-    void GetImage(QImage);
+    void ShowImage(QImage);
     void handleError(HHVideoStream::HHVideoStreamError,const QString& );
 private:
     HHVideoStream *m_stream;
