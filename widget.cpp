@@ -12,7 +12,7 @@ Widget::Widget(QWidget *parent) :
     videowidget=new HHVideoWidget(0,this);
     videowidget->setStream(stream);
     connect(stream,&HHVideoStream::GetImage,videowidget,&HHVideoWidget::ShowImage);
-    connect(stream,&HHVideoStream::Error,videowidget,&HHVideoWidget::handleError);
+    connect(stream,&HHVideoStream::Error,videowidget,&HHVideoWidget::HandleError);
     stream->startStream();
     QHBoxLayout *layout=new QHBoxLayout(this);
     layout->addWidget(videowidget);

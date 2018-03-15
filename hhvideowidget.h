@@ -16,7 +16,7 @@ public:
     ~HHVideoWidget();
 public slots:
     void ShowImage(QImage);
-    void handleError(HHVideoStream::HHVideoStreamError,const QString& );
+    void HandleError(HHVideoStream::HHVideoStreamError,const QString& );
 private:
     HHVideoStream *m_stream;
     QImage image;

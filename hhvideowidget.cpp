@@ -53,7 +53,7 @@ void HHVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
     }
 }
 
-void HHVideoWidget::handleError(HHVideoStream::HHVideoStreamError,const QString& msg )
+void HHVideoWidget::HandleError(HHVideoStream::HHVideoStreamError,const QString& msg )
 {
     QMessageBox::information(NULL, "error", msg, QMessageBox::Yes );
 }
