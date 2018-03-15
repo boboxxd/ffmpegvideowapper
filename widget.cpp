@@ -1,5 +1,4 @@
 #include "widget.h"
-#include "ui_widget.h"
 #include <QPainter>
 #include <QMouseEvent>
 #include <QMessageBox>
@@ -19,8 +18,6 @@ Widget::Widget(QWidget *parent) :
     videowidget->resize(this->width(),this->height());
     videowidget->show();
 }
-
-
 
 Widget::~Widget()
 {
