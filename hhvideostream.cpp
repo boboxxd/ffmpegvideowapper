@@ -12,8 +12,6 @@ HHVideoStream::HHVideoStream()
     m_timerPlay->setInterval(10);
 }
 
-
-
 void HHVideoStream::setUrl(QString url)
 {
     m_str_url=url;
@@ -131,11 +129,17 @@ void HHVideoStream::playSlots()
 
 void HHVideoStream::stopStream()
 {
+    if(isconnected != 0)
+        return;
+    QImage image=QImage(videoWidth,videoHeight,QImage::Format_RGB888);
+    image.fill(Qt::black);
+    emit GetImage(image);
     m_timerPlay->stop();
     avformat_free_context(pAVFormatContext);
     av_frame_free(&pAVFrame);
     sws_freeContext(pSwsContext);
 }
+
 
 HHVideoStream::~HHVideoStream()
 {
