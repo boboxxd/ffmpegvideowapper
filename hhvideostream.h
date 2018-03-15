@@ -1,11 +1,10 @@
 #ifndef VIDEOSTREAM_H
 #define VIDEOSTREAM_H
-#ifdef __cplusplus
 #include <QPixmap>
 #include <QMutex>
 #include <QTimer>
 #include <QLabel>
-
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -36,11 +35,13 @@ public:
         CONNECTERROR,       //打开视频流失败
         GETSTREAMINFOERROR, //获取视频流信息失败
         OPENCODECERROR,      //打开解码器失败
-        NETWORKERROR
+        NETWORKERROR        //网络错误
     };
 
     HHVideoStream();
     ~HHVideoStream();
+    HHVideoStream(const HHVideoStream& stream)=delete;
+    void operator =(const HHVideoStream& stream)=delete;
     void setUrl(QString url);
     void startStream();
     void stopStream();

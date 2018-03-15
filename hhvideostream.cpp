@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QDateTime>
 #include <unistd.h>
+
 HHVideoStream::HHVideoStream()
     :QObject()
 {
@@ -10,6 +11,8 @@ HHVideoStream::HHVideoStream()
     m_timerPlay = new QTimer;
     m_timerPlay->setInterval(10);
 }
+
+
 
 void HHVideoStream::setUrl(QString url)
 {

@@ -8,6 +8,11 @@ HHVideoWidget::HHVideoWidget(HHVideoStream *stream,QWidget *parent)
 
 }
 
+void HHVideoWidget::setStream(HHVideoStream *stream)
+{
+    m_stream=stream;
+}
+
 HHVideoWidget::~HHVideoWidget()
 {
     delete m_stream;

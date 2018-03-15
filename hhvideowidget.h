@@ -5,12 +5,12 @@
 #include <QOpenGLWidget>
 #include "hhvideostream.h"
 #include <QImage>
-#include <QLabel>
 class HHVideoWidget : public QOpenGLWidget
 {
     Q_OBJECT
 public:
     HHVideoWidget(HHVideoStream *stream=0,QWidget *parent=0);
+    void setStream(HHVideoStream *stream);
     void paintEvent(QPaintEvent *e);
     void mouseDoubleClickEvent(QMouseEvent *e);
     ~HHVideoWidget();
