@@ -13,6 +13,7 @@ public:
     HHVideoWidget(HHVideoStream *stream=0,QWidget *parent=0);
     void paintEvent(QPaintEvent *e);
     void mouseDoubleClickEvent(QMouseEvent *e);
+    ~HHVideoWidget();
 public slots:
     void GetImage(QImage);
     void handleError(HHVideoStream::HHVideoStreamError,const QString& );

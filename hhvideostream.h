@@ -40,6 +40,7 @@ public:
     };
 
     HHVideoStream();
+    ~HHVideoStream();
     void setUrl(QString url);
     void startStream();
     void stopStream();

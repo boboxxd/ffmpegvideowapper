@@ -134,4 +134,10 @@ void HHVideoStream::stopStream()
     sws_freeContext(pSwsContext);
 }
 
+HHVideoStream::~HHVideoStream()
+{
+    stopStream();
+    av_free_packet(&pAVPacket);
+
+}
 

@@ -8,6 +8,11 @@ HHVideoWidget::HHVideoWidget(HHVideoStream *stream,QWidget *parent)
 
 }
 
+HHVideoWidget::~HHVideoWidget()
+{
+    delete m_stream;
+}
+
 void HHVideoWidget::GetImage(QImage img)
 {
     image=img.copy(0,0,img.width(),img.height());
