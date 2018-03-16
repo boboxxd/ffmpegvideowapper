@@ -38,7 +38,6 @@ void HHVideoAlarm::Login()
     {
         islogin=true;
     }
-
 }
 
 void HHVideoAlarm::LogOut()

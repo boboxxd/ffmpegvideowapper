@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVariant>
 #include "HHClient.hpp"
+
 using namespace hhclient;
 class HHCallback: public QObject,public HHlientCallback
 {

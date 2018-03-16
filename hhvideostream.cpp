@@ -37,8 +37,13 @@ bool HHVideoStream::Init()
 {
     if(m_str_url.isEmpty())
         return false;
-    //打开视频流
-    int result=avformat_open_input(&pAVFormatContext, m_str_url.toStdString().c_str(),NULL,NULL);
+
+    //修改FFMPEG以TCP方式接收
+    options = NULL;
+    av_dict_set(&options, "rtsp_transport", "tcp", 0);
+
+    //打开视频流    
+    int result=avformat_open_input(&pAVFormatContext, m_str_url.toStdString().c_str(),NULL,&options);
     if (result<0){
         qDebug()<<"打开视频流失败";
         emit Error(CONNECTERROR,"打开视频流失败!");
@@ -138,6 +143,7 @@ void HHVideoStream::stopStream()
     image.fill(Qt::black);
     emit GetImage(image);
     m_timerPlay->stop();
+    av_dict_free(&options);
     avformat_free_context(pAVFormatContext);
     av_frame_free(&pAVFrame);
     sws_freeContext(pSwsContext);
@@ -146,8 +152,8 @@ void HHVideoStream::stopStream()
 
 
 HHVideoStream::~HHVideoStream()
-{
+{  
+    //av_free_packet(&pAVPacket);
     stopStream();
-    av_free_packet(&pAVPacket);
 }
 

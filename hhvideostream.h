@@ -58,6 +58,7 @@ private:
     bool Init();
     QMutex mutex;
     AVPicture  pAVPicture;
+    AVDictionary* options;
     AVFormatContext *pAVFormatContext;
     AVCodecContext *pAVCodecContext;
     AVFrame *pAVFrame;
