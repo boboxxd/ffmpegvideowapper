@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QThread>
 Widget::Widget(QWidget *parent) :
     QWidget(parent)
 { 
@@ -12,7 +13,12 @@ Widget::Widget(QWidget *parent) :
     videowidget=new HHVideoWidget(0,this);
     videowidget->setStream(stream);
     connect(stream,&HHVideoStream::GetImage,videowidget,&HHVideoWidget::ShowImage);
-    connect(stream,&HHVideoStream::Error,videowidget,&HHVideoWidget::HandleError);
+
+    alarm=new HHVideoAlarm;
+    alarm->setLoginInfo("122.192.0.174",30666);
+    alarm->Login();
+    connect(alarm,&HHVideoAlarm::SendAlarm,videowidget,&HHVideoWidget::RecieveAlarm);
+
     stream->startStream();
 
     QHBoxLayout *layout=new QHBoxLayout(this);
@@ -21,8 +27,14 @@ Widget::Widget(QWidget *parent) :
     btn2=new QPushButton(this);
     btn1->setText("disconnect");
     btn2->setText("connect");
+
     connect(btn1,&QPushButton::clicked,stream,&HHVideoStream::stopStream);
     connect(btn2,&QPushButton::clicked,stream,&HHVideoStream::startStream);
+    connect(btn1,&QPushButton::clicked,alarm,&HHVideoAlarm::LogOut);
+    connect(btn2,&QPushButton::clicked,alarm,&HHVideoAlarm::Login);
+    connect(stream,&HHVideoStream::Error,this,&Widget::HandleHHVideoStreamError);
+    connect(alarm,&HHVideoAlarm::Error,this,&Widget::HandleHHVideoAlarmError);
+
     layout->addWidget(btn1);
     layout->addWidget(btn2);
     layout->addWidget(videowidget);
@@ -35,8 +47,20 @@ Widget::Widget(QWidget *parent) :
     videowidget->show();
 }
 
+void Widget::HandleHHVideoStreamError(HHVideoStream::HHVideoStreamError,const QString& msg )
+{
+    QMessageBox::information(NULL, "error", msg, QMessageBox::Yes );
+}
+
+void Widget::HandleHHVideoAlarmError(HHVideoAlarm::HHVideoAlarmError,const QString& msg )
+{
+    QMessageBox::information(NULL, "error", msg, QMessageBox::Yes );
+}
+
 Widget::~Widget()
 {
     delete videowidget;
     delete stream;
+    videowidget=nullptr;
+    stream=nullptr;
 }

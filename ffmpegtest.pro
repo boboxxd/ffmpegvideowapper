@@ -27,13 +27,17 @@ SOURCES += \
         main.cpp \
         widget.cpp \
     hhvideostream.cpp \
-    hhvideowidget.cpp
+    hhvideowidget.cpp \
+    hhvideoalarm.cpp
 
 HEADERS += \
         widget.h \
     hhvideostream.h \
-    hhvideowidget.h
+    hhvideowidget.h \
+    hhvideoalarm.h
 
 
 INCLUDEPATH += /home/hhit/lib/ffmpeg-release/include
+INCLUDEPATH += $$PWD/include
 LIBS += -L/home/hhit/lib/ffmpeg-release/lib -lavcodec -lavformat -lswscale -lavdevice -lavfilter -lavutil -lswresample
+LIBS += -L$$PWD/lib/ -lhhclient

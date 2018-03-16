@@ -8,6 +8,7 @@ HHVideoStream::HHVideoStream()
 {
     m_i_frameFinished=1;
     isconnected=0;
+    hasstopped=false;
     m_timerPlay = new QTimer;
     m_timerPlay->setInterval(10);
 }
@@ -26,6 +27,7 @@ void HHVideoStream::startStream()
     pAVFrame=av_frame_alloc();
     if (this->Init())
     {
+        hasstopped=false;
         connect(m_timerPlay,SIGNAL(timeout()),this,SLOT(playSlots()));
         m_timerPlay->start();
     }
@@ -102,7 +104,7 @@ void HHVideoStream::playSlots()
                 mutex.lock();
                 sws_scale(pSwsContext,(const uint8_t* const *)pAVFrame->data,pAVFrame->linesize,0,videoHeight,pAVPicture.data,pAVPicture.linesize);
                 //发送获取一帧图像信号
-                qDebug()<<"pts= "<<pAVFrame->pkt_pts;
+                //qDebug()<<"pts= "<<pAVFrame->pkt_pts;
                 QImage image(pAVPicture.data[0],videoWidth,videoHeight,QImage::Format_RGB888);
                 emit GetImage(image);
                 mutex.unlock();
@@ -129,7 +131,8 @@ void HHVideoStream::playSlots()
 
 void HHVideoStream::stopStream()
 {
-    if(isconnected != 0)
+    qDebug()<<isconnected;
+    if(hasstopped)
         return;
     QImage image=QImage(videoWidth,videoHeight,QImage::Format_RGB888);
     image.fill(Qt::black);
@@ -138,6 +141,7 @@ void HHVideoStream::stopStream()
     avformat_free_context(pAVFormatContext);
     av_frame_free(&pAVFrame);
     sws_freeContext(pSwsContext);
+    hasstopped=true;
 }
 
 
@@ -145,6 +149,5 @@ HHVideoStream::~HHVideoStream()
 {
     stopStream();
     av_free_packet(&pAVPacket);
-
 }
 

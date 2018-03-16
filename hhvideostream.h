@@ -69,6 +69,7 @@ private:
     int  m_i_frameFinished;
     QTimer *m_timerPlay;
     int isconnected;
+    bool hasstopped;
 };
 
 #endif // VIDEOSTREAM_H
