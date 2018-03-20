@@ -19,11 +19,11 @@ class HHVideoAlarm : public QObject
 {
     Q_OBJECT
 public:
+    static QString cartypeString(HHAlarm alarm);
     enum HHVideoAlarmError
     {
         CONNECTERROR
     };
-
     HHVideoAlarm();
     ~HHVideoAlarm();
     void setLoginInfo(const QString& ip,int port);

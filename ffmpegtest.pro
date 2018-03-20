@@ -37,7 +37,10 @@ HEADERS += \
     hhvideoalarm.h
 
 
-INCLUDEPATH += /home/hhit/lib/ffmpeg-release/include
+
+INCLUDEPATH += /usr/local/Cellar/ffmpeg/3.4.2/include
 INCLUDEPATH += $$PWD/include
-LIBS += -L/home/hhit/lib/ffmpeg-release/lib -lavcodec -lavformat -lswscale -lavdevice -lavfilter -lavutil -lswresample
+LIBS += -L/usr/local/Cellar/ffmpeg/3.4.2/lib -lavcodec -lavformat -lswscale -lavdevice -lavfilter -lavutil -lswresample
 LIBS += -L$$PWD/lib/ -lhhclient
+
+

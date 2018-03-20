@@ -1,6 +1,5 @@
 #include "hhvideostream.h"
 #include <QDebug>
-#include <QDateTime>
 #include <unistd.h>
 
 HHVideoStream::HHVideoStream()
@@ -21,6 +20,9 @@ void HHVideoStream::setUrl(QString url)
     m_str_url=url;
 }
 
+/**
+ 开始取流播放
+ **/
 void HHVideoStream::startStream()
 {
     videoStreamIndex=-1;
@@ -36,6 +38,9 @@ void HHVideoStream::startStream()
     }
 }
 
+/**
+ 做一些解码前的初始化工作
+ **/
 bool HHVideoStream::Init()
 {
     if(m_str_url.isEmpty())
@@ -43,7 +48,7 @@ bool HHVideoStream::Init()
     //修改FFMPEG以TCP方式接收
     options = NULL;
     av_dict_set(&options, "rtsp_transport", "tcp", 0);
-    //如果没有设置stimeout，那么把ipc网线拔掉，av_read_frame会阻塞（时间单位是微妙）
+    //如果没有设置timeout，那么把ipc网线拔掉，av_read_frame会阻塞（时间单位是微妙）
     av_dict_set(&options, "stimeout", "2000000", 0);
 
     //打开视频流    
@@ -101,7 +106,9 @@ bool HHVideoStream::Init()
     return true;
 }
 
-
+/**
+ 解码取图，发送给显示层hhvideowidget
+ **/
 void HHVideoStream::playSlots()
 {
     //一帧一帧读取视频
@@ -134,9 +141,13 @@ void HHVideoStream::playSlots()
  av_free_packet(&pAVPacket);//释放资源,否则内存会一直上升
 }
 
+/**
+ 停止播放
+ **/
 void HHVideoStream::stopStream()
 {
     qDebug()<<"void HHVideoStream::stopStream()";
+    m_timerPlay->stop();
     qDebug()<<"hasstopped"<<hasstopped;
 
     if(hasstopped==true)
@@ -152,9 +163,8 @@ void HHVideoStream::stopStream()
     sws_freeContext(pSwsContext);
     avformat_free_context(pAVFormatContext);
     hasstopped=true;
-
+    
     emit GetImage(blackimage);
-    m_timerPlay->stop();
     qDebug()<<"after emit GetImage(blackimage);";
 }
 

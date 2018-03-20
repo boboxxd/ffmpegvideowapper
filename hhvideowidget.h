@@ -20,7 +20,6 @@ public:
     void paintEvent(QPaintEvent *e);
     void mouseDoubleClickEvent(QMouseEvent *e);
     ~HHVideoWidget();
-    static QString cartypeString(HHAlarm alarm);
     void closeEvent(QCloseEvent *event);
     void disconnectFromStream();
     void disconnectFromAlarm();

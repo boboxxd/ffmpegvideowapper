@@ -3,15 +3,14 @@
 #include <QMouseEvent>
 #include <QMessageBox>
 #include <QHBoxLayout>
-
-#include <QThread>
 #include <QDebug>
+
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent)
 { 
     qDebug()<<"Widget::Widget(QWidget *parent)";
-    HHVideoStream *stream=new HHVideoStream;
+    stream =new HHVideoStream; 
     stream->setUrl("rtsp://admin:ad53937301@122.192.0.173:554/h264/ch1/main/av_stream");
     videowidget=new HHVideoWidget(this);
     videowidget->setStream(stream);
@@ -65,19 +64,25 @@ void Widget::HandleHHVideoAlarmError(HHVideoAlarm::HHVideoAlarmError,const QStri
 
 void Widget::closeEvent(QCloseEvent *event)
 {
+    Q_UNUSED(event)
     qDebug()<<endl;
     qDebug()<<"正在关闭应用程序...........";
     qDebug()<<"void Widget::closeEvent(QCloseEvent *event)";
-    close();
+    
+    qDebug()<<"stream" << stream ;
+    alarm->LogOut();
+    delete alarm;
+    alarm=nullptr;
+    
+    stream->stopStream();
+    if(stream){
+        delete stream;
+        stream=nullptr;
+    } 
 }
 
 Widget::~Widget()
 {
     qDebug()<<"Widget::~Widget()";
-    delete videowidget;
-    videowidget=nullptr;
-    delete alarm;
-    alarm=nullptr;
-    delete stream;
-    stream=nullptr;
+
 }
