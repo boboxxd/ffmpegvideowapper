@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		F1FDCDA458D5D923C155F57E /* Qt Preprocess */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "ffmpegdemo" */;
+			buildPhases = (
+				5E618435888B9D49F8540165 /* Qt Qmake */,
+				7EF0942E79C014DCEC8976BC /* Qt Preprocessors */,
+			);
+			dependencies = (
+			);
+			name = "Qt Preprocess";
+			productName = "Qt Preprocess";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		01294897F7656405DBF90FB7 /* hhvideowidget.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 7D807E90B645D4135A7B09B4 /* hhvideowidget.cpp */; settings = {ATTRIBUTES = (); }; };
+		1D916FCEBCFD6F52A7A0DA16 /* swscale in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 31EEBB4A20AB9A7DC0970647 /* swscale */; };
+		20CF629741B7F8AC201C0F34 /* avformat in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 747B33C2100862A5E00C699F /* avformat */; };
+		24DAB9440060EC58EB9200E0 /* moc_hhvideowidget.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 69CB638992381A014A2C9DC6 /* moc_hhvideowidget.cpp */; settings = {ATTRIBUTES = (); }; };
+		6213CA3F2E08C34C464BCAFC /* QtOpenGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = DCCF46BD0341311C8B774276 /* QtOpenGL.framework */; };
+		63D603687E6177AF01345EF0 /* hhclient in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = AFE253D73F4291B78E7CE842 /* hhclient */; };
+		669DBBA2AB3445F71B6956B4 /* hhvideostream.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 73CEEA15A479A392F528F2D0 /* hhvideostream.cpp */; settings = {ATTRIBUTES = (); }; };
+		7499A05E88A34BECC1BD370F /* avcodec in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 4F408E2F71217904B5ED0C10 /* avcodec */; };
+		83A7B75600B4F114F50384D0 /* hhvideoalarm.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 2B57504B8DDEE4D95E886E7E /* hhvideoalarm.cpp */; settings = {ATTRIBUTES = (); }; };
+		867CE0F719EE3A2058EDF2AD /* QtCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = DECD3ED3BAD3D7BB509B374A /* QtCore.framework */; };
+		8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = D4B32C2222F82AC56BADEB21 /* OpenGL.framework */; };
+		8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = A1A67BEAA744704B29168D39 /* IOKit.framework */; };
+		8D4CF71A8E5FD33FDE303374 /* QtWidgets.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = BEA3FDE8ADF2E149CE621988 /* QtWidgets.framework */; };
+		8F944CB8A8F8C39F1E2B0513 /* avutil in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 5CD90EFF85600E02BAD7E205 /* avutil */; };
+		914A8AB37C7FE6C07BC420EA /* swresample in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2FA202D645814439A663BDF2 /* swresample */; };
+		A95A5CBF62FDE42D0FAE8AB4 /* moc_hhvideoalarm.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 021A84B6CB56D6F026BCA24D /* moc_hhvideoalarm.cpp */; settings = {ATTRIBUTES = (); }; };
+		A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */; };
+		B37BD5B55F39C171A9EE8BC1 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = C600F15828C2D6C30F1AE272 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		B6849EFB5CCA6F5D6BFB5352 /* dummy.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = C72A41EAE17A8AFAF5D6676C /* dummy.cpp */; settings = {ATTRIBUTES = (); }; };
+		B73160038B4F2BEC8F3C1665 /* widget.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 4F43432218234CDA7F7FE7D1 /* widget.cpp */; settings = {ATTRIBUTES = (); }; };
+		DCF5F6B7D05C06F28090F734 /* avdevice in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 4B971FE6E57D993D6B78D45E /* avdevice */; };
+		DE558C572C39742774E50625 /* QtGui.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = C52CFB683825C03068481D79 /* QtGui.framework */; };
+		E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */; };
+		E8C0F4B7FBE530ECBC25987A /* avfilter in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 6A1A84B6FDD70F98B48A8FF9 /* avfilter */; };
+		EFD5ECC79CF52768596EAE54 /* moc_hhvideostream.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 0FC1ED9161C38C18296FEE02 /* moc_hhvideostream.cpp */; settings = {ATTRIBUTES = (); }; };
+		FF0EBF20CE40659F761ADD8C /* moc_widget.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 663EDFBE342B28D58795D16B /* moc_widget.cpp */; settings = {ATTRIBUTES = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CDA37142060F2560069B297 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DB9C3763D02B1415CD9D565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1FDCDA458D5D923C155F57E;
+			remoteInfo = "Qt Preprocess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99542592E9780B9225F24AA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		021A84B6CB56D6F026BCA24D /* moc_hhvideoalarm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_hhvideoalarm.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/moc_hhvideoalarm.cpp; sourceTree = "<absolute>"; };
+		0FC1ED9161C38C18296FEE02 /* moc_hhvideostream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_hhvideostream.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/moc_hhvideostream.cpp; sourceTree = "<absolute>"; };
+		2B57504B8DDEE4D95E886E7E /* hhvideoalarm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hhvideoalarm.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideoalarm.cpp; sourceTree = "<absolute>"; };
+		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
+		2FA202D645814439A663BDF2 /* swresample */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = swresample; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libswresample.dylib; sourceTree = "<absolute>"; };
+		31EEBB4A20AB9A7DC0970647 /* swscale */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = swscale; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libswscale.dylib; sourceTree = "<absolute>"; };
+		4B971FE6E57D993D6B78D45E /* avdevice */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = avdevice; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libavdevice.dylib; sourceTree = "<absolute>"; };
+		4F408E2F71217904B5ED0C10 /* avcodec */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = avcodec; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libavcodec.dylib; sourceTree = "<absolute>"; };
+		4F43432218234CDA7F7FE7D1 /* widget.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = widget.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/widget.cpp; sourceTree = "<absolute>"; };
+		531F998F83B18329E14CD798 /* ffmpegtest.pro */ = {isa = PBXFileReference; lastKnownFileType = text; name = ffmpegtest.pro; path = /Users/xuxudong/Mycode/ffmpegvideowapper/ffmpegtest.pro; sourceTree = "<absolute>"; };
+		5CD90EFF85600E02BAD7E205 /* avutil */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = avutil; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libavutil.dylib; sourceTree = "<absolute>"; };
+		663EDFBE342B28D58795D16B /* moc_widget.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_widget.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/moc_widget.cpp; sourceTree = "<absolute>"; };
+		69CB638992381A014A2C9DC6 /* moc_hhvideowidget.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_hhvideowidget.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/moc_hhvideowidget.cpp; sourceTree = "<absolute>"; };
+		6A1A84B6FDD70F98B48A8FF9 /* avfilter */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = avfilter; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libavfilter.dylib; sourceTree = "<absolute>"; };
+		73CEEA15A479A392F528F2D0 /* hhvideostream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hhvideostream.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideostream.cpp; sourceTree = "<absolute>"; };
+		747B33C2100862A5E00C699F /* avformat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = avformat; path = /usr/local/Cellar/ffmpeg/3.4.2/lib/libavformat.dylib; sourceTree = "<absolute>"; };
+		7D807E90B645D4135A7B09B4 /* hhvideowidget.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = hhvideowidget.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideowidget.cpp; sourceTree = "<absolute>"; };
+		8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		92BCA638BE87CEC3008226B4 /* hhvideostream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hhvideostream.h; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideostream.h; sourceTree = "<absolute>"; };
+		A1A67BEAA744704B29168D39 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		A91FD57EAEEC5EAC72DAFF4B /* widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = widget.h; path = /Users/xuxudong/Mycode/ffmpegvideowapper/widget.h; sourceTree = "<absolute>"; };
+		AFDCDE33CAE067725331B35E /* hhvideoalarm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hhvideoalarm.h; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideoalarm.h; sourceTree = "<absolute>"; };
+		AFE253D73F4291B78E7CE842 /* hhclient */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = hhclient; path = /Users/xuxudong/Mycode/ffmpegvideowapper/lib/libhhclient.dylib; sourceTree = "<absolute>"; };
+		BEA3FDE8ADF2E149CE621988 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = /usr/local/Cellar/qt/5.9.0/lib/QtWidgets.framework; sourceTree = "<absolute>"; };
+		C52CFB683825C03068481D79 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /usr/local/Cellar/qt/5.9.0/lib/QtGui.framework; sourceTree = "<absolute>"; };
+		C600F15828C2D6C30F1AE272 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/xuxudong/Mycode/ffmpegvideowapper/main.cpp; sourceTree = "<absolute>"; };
+		C72A41EAE17A8AFAF5D6676C /* dummy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = dummy.cpp; path = /usr/local/Cellar/qt/5.9.0/mkspecs/features/data/dummy.cpp; sourceTree = "<absolute>"; };
+		D4B32C2222F82AC56BADEB21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		DCCF46BD0341311C8B774276 /* QtOpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtOpenGL.framework; path = /usr/local/Cellar/qt/5.9.0/lib/QtOpenGL.framework; sourceTree = "<absolute>"; };
+		DECD3ED3BAD3D7BB509B374A /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = /usr/local/Cellar/qt/5.9.0/lib/QtCore.framework; sourceTree = "<absolute>"; };
+		F0704ECF601E37956528577D /* ffmpegdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ffmpegdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F905D208011409B303F6FAF1 /* hhvideowidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hhvideowidget.h; path = /Users/xuxudong/Mycode/ffmpegvideowapper/hhvideowidget.h; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1C883685E82D5676953459A /* Link Binary With Libraries */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7499A05E88A34BECC1BD370F /* avcodec in Link Binary With Libraries */,
+				20CF629741B7F8AC201C0F34 /* avformat in Link Binary With Libraries */,
+				1D916FCEBCFD6F52A7A0DA16 /* swscale in Link Binary With Libraries */,
+				DCF5F6B7D05C06F28090F734 /* avdevice in Link Binary With Libraries */,
+				E8C0F4B7FBE530ECBC25987A /* avfilter in Link Binary With Libraries */,
+				8F944CB8A8F8C39F1E2B0513 /* avutil in Link Binary With Libraries */,
+				914A8AB37C7FE6C07BC420EA /* swresample in Link Binary With Libraries */,
+				63D603687E6177AF01345EF0 /* hhclient in Link Binary With Libraries */,
+				6213CA3F2E08C34C464BCAFC /* QtOpenGL.framework in Link Binary With Libraries */,
+				8D4CF71A8E5FD33FDE303374 /* QtWidgets.framework in Link Binary With Libraries */,
+				DE558C572C39742774E50625 /* QtGui.framework in Link Binary With Libraries */,
+				867CE0F719EE3A2058EDF2AD /* QtCore.framework in Link Binary With Libraries */,
+				A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */,
+				8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */,
+				8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */,
+				E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */,
+			);
+			name = "Link Binary With Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25B08E2869634E9BCBA333A2 /* Generated Sources */ = {
+			isa = PBXGroup;
+			children = (
+				663EDFBE342B28D58795D16B /* moc_widget.cpp */,
+				0FC1ED9161C38C18296FEE02 /* moc_hhvideostream.cpp */,
+				69CB638992381A014A2C9DC6 /* moc_hhvideowidget.cpp */,
+				021A84B6CB56D6F026BCA24D /* moc_hhvideoalarm.cpp */,
+			);
+			name = "Generated Sources";
+			sourceTree = "<group>";
+		};
+		2EB56BE3C2D93CDAB0C52E67 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C600F15828C2D6C30F1AE272 /* main.cpp */,
+				4F43432218234CDA7F7FE7D1 /* widget.cpp */,
+				73CEEA15A479A392F528F2D0 /* hhvideostream.cpp */,
+				7D807E90B645D4135A7B09B4 /* hhvideowidget.cpp */,
+				2B57504B8DDEE4D95E886E7E /* hhvideoalarm.cpp */,
+				A91FD57EAEEC5EAC72DAFF4B /* widget.h */,
+				92BCA638BE87CEC3008226B4 /* hhvideostream.h */,
+				F905D208011409B303F6FAF1 /* hhvideowidget.h */,
+				AFDCDE33CAE067725331B35E /* hhvideoalarm.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		74B182DB50CB5611B5C1C297 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				531F998F83B18329E14CD798 /* ffmpegtest.pro */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF39DD055C3EF8226FBE929D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F408E2F71217904B5ED0C10 /* avcodec */,
+				747B33C2100862A5E00C699F /* avformat */,
+				31EEBB4A20AB9A7DC0970647 /* swscale */,
+				4B971FE6E57D993D6B78D45E /* avdevice */,
+				6A1A84B6FDD70F98B48A8FF9 /* avfilter */,
+				5CD90EFF85600E02BAD7E205 /* avutil */,
+				2FA202D645814439A663BDF2 /* swresample */,
+				AFE253D73F4291B78E7CE842 /* hhclient */,
+				DCCF46BD0341311C8B774276 /* QtOpenGL.framework */,
+				BEA3FDE8ADF2E149CE621988 /* QtWidgets.framework */,
+				C52CFB683825C03068481D79 /* QtGui.framework */,
+				DECD3ED3BAD3D7BB509B374A /* QtCore.framework */,
+				2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */,
+				A1A67BEAA744704B29168D39 /* IOKit.framework */,
+				D4B32C2222F82AC56BADEB21 /* OpenGL.framework */,
+				8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8254625CFD509ED2A24A166 /* Sources [moc_predefs] */ = {
+			isa = PBXGroup;
+			children = (
+				C72A41EAE17A8AFAF5D6676C /* dummy.cpp */,
+			);
+			name = "Sources [moc_predefs]";
+			sourceTree = "<group>";
+		};
+		E8C543AB96796ECAA2E65C57 /* ffmpegdemo */ = {
+			isa = PBXGroup;
+			children = (
+				2EB56BE3C2D93CDAB0C52E67 /* Sources */,
+				25B08E2869634E9BCBA333A2 /* Generated Sources */,
+				74B182DB50CB5611B5C1C297 /* Supporting Files */,
+				B8254625CFD509ED2A24A166 /* Sources [moc_predefs] */,
+				AF39DD055C3EF8226FBE929D /* Frameworks */,
+				FE0A091FDBFB3E9C31B7A1BD /* Products */,
+			);
+			name = ffmpegdemo;
+			sourceTree = "<group>";
+		};
+		FE0A091FDBFB3E9C31B7A1BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0704ECF601E37956528577D /* ffmpegdemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7900B73F1D230AAA4A1B285A /* ffmpegdemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "ffmpegdemo" */;
+			buildPhases = (
+				F7E50F631C51CD5B5DC0BC43 /* Compile Sources */,
+				D1C883685E82D5676953459A /* Link Binary With Libraries */,
+				30414803F31797EB689AE508 /* Copy Bundle Resources */,
+				99542592E9780B9225F24AA8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FDD177777B941F85BFF4301 /* PBXTargetDependency */,
+			);
+			name = ffmpegdemo;
+			productName = ffmpegdemo;
+			productReference = F0704ECF601E37956528577D /* ffmpegdemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DB9C3763D02B1415CD9D565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				TargetAttributes = {
+					7900B73F1D230AAA4A1B285A = {
+						DevelopmentTeam = CZR66ZA6BM;
+					};
+					F1FDCDA458D5D923C155F57E = {
+						DevelopmentTeam = CZR66ZA6BM;
+					};
+				};
+			};
+			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "ffmpegdemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8C543AB96796ECAA2E65C57 /* ffmpegdemo */;
+			productRefGroup = FE0A091FDBFB3E9C31B7A1BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7900B73F1D230AAA4A1B285A /* ffmpegdemo */,
+				F1FDCDA458D5D923C155F57E /* Qt Preprocess */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30414803F31797EB689AE508 /* Copy Bundle Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E618435888B9D49F8540165 /* Qt Qmake */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Qmake";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/xuxudong/Mycode/ffmpegvideowapper/ -f ffmpegdemo.xcodeproj/qt_makeqmake.mak";
+			showEnvVarsInLog = 0;
+		};
+		7EF0942E79C014DCEC8976BC /* Qt Preprocessors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Preprocessors";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/xuxudong/Mycode/ffmpegvideowapper/ -f ffmpegdemo.xcodeproj/qt_preprocess.mak";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E50F631C51CD5B5DC0BC43 /* Compile Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37BD5B55F39C171A9EE8BC1 /* main.cpp in Compile Sources */,
+				B73160038B4F2BEC8F3C1665 /* widget.cpp in Compile Sources */,
+				669DBBA2AB3445F71B6956B4 /* hhvideostream.cpp in Compile Sources */,
+				01294897F7656405DBF90FB7 /* hhvideowidget.cpp in Compile Sources */,
+				83A7B75600B4F114F50384D0 /* hhvideoalarm.cpp in Compile Sources */,
+				FF0EBF20CE40659F761ADD8C /* moc_widget.cpp in Compile Sources */,
+				EFD5ECC79CF52768596EAE54 /* moc_hhvideostream.cpp in Compile Sources */,
+				24DAB9440060EC58EB9200E0 /* moc_hhvideowidget.cpp in Compile Sources */,
+				A95A5CBF62FDE42D0FAE8AB4 /* moc_hhvideoalarm.cpp in Compile Sources */,
+				B6849EFB5CCA6F5D6BFB5352 /* dummy.cpp in Compile Sources */,
+			);
+			name = "Compile Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FDD177777B941F85BFF4301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1FDCDA458D5D923C155F57E /* Qt Preprocess */;
+			targetProxy = 9CDA37142060F2560069B297 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		339EE1B2CC4FC24589A0EA95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				"ARCHS[sdk=macosx*]" = x86_64;
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = CZR66ZA6BM;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/usr/local/Cellar/qt/5.9.0/lib,
+					/usr/local/Cellar/qt/5.9.0/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					/usr/local/Cellar/ffmpeg/3.4.2/include,
+					include,
+					/usr/local/Cellar/qt/5.9.0/lib/QtOpenGL.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtWidgets.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtGui.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtCore.framework/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					"/usr/local/Cellar/qt/5.9.0/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/3.4.2/lib,
+					/Users/xuxudong/Mycode/ffmpegvideowapper/lib/,
+					/usr/local/Cellar/qt/5.9.0/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_OPENGL_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-O2",
+					"-std=gnu++11",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_OPENGL_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-stdlib=libc++",
+					"-headerpad_max_install_names",
+					"-Wl,-rpath,@executable_path/Frameworks",
+					"-F/usr/local/Cellar/qt/5.9.0/lib",
+					"-L/usr/local/Cellar/ffmpeg/3.4.2/lib",
+					"-L/Users/xuxudong/Mycode/ffmpegvideowapper/lib/",
+				);
+				PRODUCT_NAME = ffmpegdemo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+				SYMROOT = /Users/xuxudong/Mycode/ffmpegvideowapper/;
+			};
+			name = Release;
+		};
+		3AA6C32AC930069E80220CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				"ARCHS[sdk=macosx*]" = x86_64;
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = CZR66ZA6BM;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/usr/local/Cellar/qt/5.9.0/lib,
+					/usr/local/Cellar/qt/5.9.0/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					/usr/local/Cellar/ffmpeg/3.4.2/include,
+					include,
+					/usr/local/Cellar/qt/5.9.0/lib/QtOpenGL.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtWidgets.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtGui.framework/Headers,
+					/usr/local/Cellar/qt/5.9.0/lib/QtCore.framework/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					"/usr/local/Cellar/qt/5.9.0/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/3.4.2/lib,
+					/Users/xuxudong/Mycode/ffmpegvideowapper/lib/,
+					/usr/local/Cellar/qt/5.9.0/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_OPENGL_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-O2",
+					"-std=gnu++11",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_OPENGL_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-stdlib=libc++",
+					"-headerpad_max_install_names",
+					"-Wl,-rpath,@executable_path/Frameworks",
+					"-F/usr/local/Cellar/qt/5.9.0/lib",
+					"-L/usr/local/Cellar/ffmpeg/3.4.2/lib",
+					"-L/Users/xuxudong/Mycode/ffmpegvideowapper/lib/",
+				);
+				PRODUCT_NAME = ffmpegdemo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+				SYMROOT = /Users/xuxudong/Mycode/ffmpegvideowapper/;
+			};
+			name = Debug;
+		};
+		6666AA5E688052234F6758D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				"ARCHS[sdk=macosx*]" = x86_64;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CZR66ZA6BM;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = ffmpegdemo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		77418F46922677BB04ED38DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				"ARCHS[sdk=macosx*]" = x86_64;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CZR66ZA6BM;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = ffmpegdemo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "ffmpegdemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77418F46922677BB04ED38DD /* Debug */,
+				6666AA5E688052234F6758D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "ffmpegdemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA6C32AC930069E80220CF1 /* Debug */,
+				339EE1B2CC4FC24589A0EA95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DB9C3763D02B1415CD9D565 /* Project object */;
+}
