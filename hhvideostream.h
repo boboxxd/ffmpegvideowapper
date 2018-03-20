@@ -45,17 +45,16 @@ public:
     void setUrl(QString url);
     void startStream();
     void stopStream();
-
-
 private slots:
     void playSlots();
 
 signals:
-    void GetImage(QImage);
+    void GetImage(const QImage&);
     void Error(HHVideoStreamError,const QString&);
 
 private:
     bool Init();
+
     QMutex mutex;
     AVPicture  pAVPicture;
     AVDictionary* options;
@@ -64,13 +63,16 @@ private:
     AVFrame *pAVFrame;
     SwsContext * pSwsContext;
     AVPacket pAVPacket;
+
+    QTimer *m_timerPlay;
     QString  m_str_url;
     int videoStreamIndex;
     int videoWidth,videoHeight;
     int  m_i_frameFinished;
-    QTimer *m_timerPlay;
+
     int isconnected;
     bool hasstopped;
+    QImage blackimage;
 };
 
 #endif // VIDEOSTREAM_H

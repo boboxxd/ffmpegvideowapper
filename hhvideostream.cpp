@@ -4,13 +4,16 @@
 #include <unistd.h>
 
 HHVideoStream::HHVideoStream()
-    :QObject()
+    :QObject(),m_str_url(QString()),videoWidth(800),videoHeight(600),m_i_frameFinished(1)
 {
-    m_i_frameFinished=1;
+    qDebug()<<"HHVideoStream::HHVideoStream()";
     isconnected=0;
     hasstopped=false;
     m_timerPlay = new QTimer;
     m_timerPlay->setInterval(10);
+    connect(this,&HHVideoStream::destroyed,m_timerPlay,&QTimer::deleteLater);
+    blackimage=QImage(videoWidth,videoHeight,QImage::Format_RGB888);
+    blackimage.fill(Qt::black);
 }
 
 void HHVideoStream::setUrl(QString url)
@@ -37,10 +40,11 @@ bool HHVideoStream::Init()
 {
     if(m_str_url.isEmpty())
         return false;
-
     //修改FFMPEG以TCP方式接收
     options = NULL;
     av_dict_set(&options, "rtsp_transport", "tcp", 0);
+    //如果没有设置stimeout，那么把ipc网线拔掉，av_read_frame会阻塞（时间单位是微妙）
+    av_dict_set(&options, "stimeout", "2000000", 0);
 
     //打开视频流    
     int result=avformat_open_input(&pAVFormatContext, m_str_url.toStdString().c_str(),NULL,&options);
@@ -117,7 +121,6 @@ void HHVideoStream::playSlots()
         }
     }else{
         //网络连接已断开，正在尝试重连...
-        av_free_packet(&pAVPacket);
         stopStream();
         //emit Error(NETWORKERROR,"网络连接已断开!");
         while(isconnected != 0)
@@ -128,32 +131,41 @@ void HHVideoStream::playSlots()
             break;
         }
     }
-
  av_free_packet(&pAVPacket);//释放资源,否则内存会一直上升
-
 }
-
 
 void HHVideoStream::stopStream()
 {
-    qDebug()<<isconnected;
-    if(hasstopped)
-        return;
-    QImage image=QImage(videoWidth,videoHeight,QImage::Format_RGB888);
-    image.fill(Qt::black);
-    emit GetImage(image);
-    m_timerPlay->stop();
-    av_dict_free(&options);
-    avformat_free_context(pAVFormatContext);
-    av_frame_free(&pAVFrame);
-    sws_freeContext(pSwsContext);
-    hasstopped=true;
-}
+    qDebug()<<"void HHVideoStream::stopStream()";
+    qDebug()<<"hasstopped"<<hasstopped;
 
+    if(hasstopped==true)
+    {
+        emit Error(CONNECTERROR,"连接已断开");
+        return;
+    }
+
+    av_dict_free(&options);
+    avpicture_free(&pAVPicture);
+    av_frame_free(&pAVFrame);
+    av_free_packet(&pAVPacket);
+    sws_freeContext(pSwsContext);
+    avformat_free_context(pAVFormatContext);
+    hasstopped=true;
+
+    emit GetImage(blackimage);
+    m_timerPlay->stop();
+    qDebug()<<"after emit GetImage(blackimage);";
+}
 
 HHVideoStream::~HHVideoStream()
 {  
-    //av_free_packet(&pAVPacket);
-    stopStream();
+    qDebug()<<"HHVideoStream::~HHVideoStream()";
+    qDebug()<<"hasstopped= "<<hasstopped;
+    if(!hasstopped)
+    {
+        stopStream();
+        delete m_timerPlay;
+    }
 }
 

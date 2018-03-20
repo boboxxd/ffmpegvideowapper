@@ -14,16 +14,19 @@ class HHVideoWidget : public QOpenGLWidget
 {
     Q_OBJECT
 public:
-    HHVideoWidget(HHVideoStream *stream=0,QWidget *parent=0);
+    HHVideoWidget(QWidget *parent=0);
     void setStream(HHVideoStream *stream);
     void setAlarm(HHVideoAlarm *alarm);
     void paintEvent(QPaintEvent *e);
     void mouseDoubleClickEvent(QMouseEvent *e);
     ~HHVideoWidget();
     static QString cartypeString(HHAlarm alarm);
+    void closeEvent(QCloseEvent *event);
+    void disconnectFromStream();
+    void disconnectFromAlarm();
 public slots:
-    void ShowImage(QImage);
-    void RecieveAlarm(QVariant);
+    void ShowImage(const QImage&);
+    void RecieveAlarm(const QVariant&);
 private slots:
     void setisshow();
 private:

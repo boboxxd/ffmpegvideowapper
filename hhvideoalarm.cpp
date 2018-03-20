@@ -1,25 +1,25 @@
 #include "hhvideoalarm.h"
 #include <QDebug>
-HHVideoAlarm::HHVideoAlarm(QObject *parent) : QObject(parent)
+HHVideoAlarm::HHVideoAlarm()
+    :QObject(),islogin(false),m_ip(QString()),m_port(30666),callback(nullptr),client(nullptr)
 {
-    islogin=false;
+    qDebug()<<"HHVideoAlarm::HHVideoAlarm()";
+    callback = new HHCallback();
 }
 
 HHVideoAlarm::~HHVideoAlarm()
 {
-    LogOut();
+    qDebug()<<"HHVideoAlarm::~HHVideoAlarm()";
     delete callback;
-    delete client;
     callback=nullptr;
-    client=nullptr;
 }
 
-void HHVideoAlarm::RecieveAlarm(QVariant data)
+void HHVideoAlarm::RecieveAlarm(const QVariant& data)
 {
     emit SendAlarm(data);
 }
 
-void HHVideoAlarm::setLoginInfo(QString ip,int port)
+void HHVideoAlarm::setLoginInfo(const QString &ip,int port)
 {
     m_ip=ip;
     m_port=port;
@@ -28,7 +28,7 @@ void HHVideoAlarm::setLoginInfo(QString ip,int port)
 
 void HHVideoAlarm::Login()
 {
-    callback = new HHCallback();
+
     client = HHClientAPI_Create(callback);
     connect(callback,&HHCallback::SendAlarm,this,&HHVideoAlarm::RecieveAlarm);
     HHResult ret = client->Login(m_ip.toStdString(),m_port);
@@ -42,12 +42,12 @@ void HHVideoAlarm::Login()
 
 void HHVideoAlarm::LogOut()
 {
+    qDebug()<<"void HHVideoAlarm::LogOut()";
     if(islogin)
     {
-        qDebug()<<"islogin= "<<islogin;
+        qDebug()<<"HHClient_Destroy(client);";
         HHClient_Destroy(client);
         islogin=false;
-        qDebug()<<"islogin= "<<islogin;
     }
 }
 

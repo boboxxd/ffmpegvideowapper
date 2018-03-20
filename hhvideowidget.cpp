@@ -2,34 +2,55 @@
 #include <QPainter>
 #include <QMouseEvent>
 #include <QMessageBox>
-HHVideoWidget::HHVideoWidget(HHVideoStream *stream,QWidget *parent)
-    :QOpenGLWidget(parent),m_stream(stream),image(QImage())
+#include <QDebug>
+#include <iostream>
+HHVideoWidget::HHVideoWidget(QWidget *parent)
+    :QOpenGLWidget(parent),isshow(false),m_stream(nullptr),m_alarm(nullptr),image(QImage())
 {
-
+    qDebug()<<"HHVideoWidget::HHVideoWidget(QWidget *parent)";
+    setAttribute(Qt::WA_DeleteOnClose);
 }
 
 void HHVideoWidget::setStream(HHVideoStream *stream)
 {
+    if(stream==nullptr)
+    {
+        std::cout<<"视频流不能为空!"<<std::endl;
+        return;
+    }
+
     m_stream=stream;
+    connect(m_stream,&HHVideoStream::GetImage,this,&HHVideoWidget::ShowImage);
 }
 
 void HHVideoWidget::setAlarm(HHVideoAlarm *alarm)
 {
+    if(alarm==nullptr)
+    {
+        std::cout<<"报警流不能为空!"<<std::endl;
+        return;
+    }
+
     m_alarm=alarm;
+    connect(m_alarm,&HHVideoAlarm::SendAlarm,this,&HHVideoWidget::RecieveAlarm);
 }
 
 HHVideoWidget::~HHVideoWidget()
 {
-    delete m_stream;
-    delete m_alarm;
-    m_stream=nullptr;
-    m_alarm=nullptr;
+    qDebug()<<"HHVideoWidget::~HHVideoWidget()";
+
 }
 
-
-void HHVideoWidget::ShowImage(QImage img)
+void HHVideoWidget::closeEvent(QCloseEvent *event)
 {
-    image=img.copy(0,0,img.width(),img.height());
+    qDebug()<<"void HHVideoWidget::closeEvent(QCloseEvent *event)";
+    disconnectFromAlarm();
+    disconnectFromStream();
+}
+
+void HHVideoWidget::ShowImage(const QImage& img)
+{
+    image=img;
     update();
 }
 
@@ -116,7 +137,7 @@ void HHVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
     }
 }
 
-void HHVideoWidget::RecieveAlarm(QVariant data)
+void HHVideoWidget::RecieveAlarm(const QVariant& data)
 {
     HHAlarm alarm=data.value<HHAlarm>();
     m_rect=QRect(alarm.coordinate[0],alarm.coordinate[1],alarm.coordinate[2],alarm.coordinate[3]);
@@ -126,5 +147,13 @@ void HHVideoWidget::RecieveAlarm(QVariant data)
     update();
 }
 
+void HHVideoWidget::disconnectFromStream()
+{
+    disconnect(m_stream,&HHVideoStream::GetImage,this,&HHVideoWidget::ShowImage);
+}
 
+void HHVideoWidget::disconnectFromAlarm()
+{
+    disconnect(m_alarm,&HHVideoAlarm::SendAlarm,this,&HHVideoWidget::RecieveAlarm);
+}
 
