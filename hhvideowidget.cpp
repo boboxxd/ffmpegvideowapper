@@ -1,11 +1,10 @@
 #include "hhvideowidget.h"
 #include <QPainter>
 #include <QMouseEvent>
-#include <QMessageBox>
 #include <QDebug>
 #include <iostream>
 HHVideoWidget::HHVideoWidget(QWidget *parent)
-    :QOpenGLWidget(parent),m_stream(nullptr),m_alarm(nullptr),image(QImage()),isshow(false)
+    :QOpenGLWidget(parent),m_stream(nullptr),m_alarm(nullptr),image(QImage()),isshow(false),m_curimageid(-1)
 {
     qDebug()<<"HHVideoWidget::HHVideoWidget(QWidget *parent)";
     setAttribute(Qt::WA_DeleteOnClose);
@@ -35,11 +34,6 @@ void HHVideoWidget::setAlarm(HHVideoAlarm *alarm)
     connect(m_alarm,&HHVideoAlarm::SendAlarm,this,&HHVideoWidget::RecieveAlarm);
 }
 
-HHVideoWidget::~HHVideoWidget()
-{
-    qDebug()<<"HHVideoWidget::~HHVideoWidget()";
-
-}
 
 void HHVideoWidget::closeEvent(QCloseEvent *event)
 {
@@ -72,12 +66,16 @@ void HHVideoWidget::paintEvent(QPaintEvent *e)
     if(isshow)
     {
         painter.begin(&image);
-        painter.setPen(QPen(Qt::green,4));
-        painter.drawRect(m_rect);
-        QFont font("宋体",25,QFont::Bold,true);
-        painter.setFont(font);
-        painter.drawText(m_rect.topLeft().x(),m_rect.topLeft().y()-10,m_type);
+        painter.setPen(QPen(Qt::green,3));
+        for(auto i=m_rects.begin();i!=m_rects.end();i++)
+        {
+            painter.drawRect(i->rect);
+            QFont font("宋体",20,QFont::Bold,true);
+            painter.setFont(font);
+            painter.drawText(i->rect.topLeft().x(),i->rect.topLeft().y()-10,m_rect.type);
+        }
         painter.end();
+
     }
 
     /**
@@ -96,7 +94,7 @@ void HHVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     if(event->button()==Qt::LeftButton)
     {
-        if(isFullScreen() == false)
+        if(!isFullScreen())
         {
             setWindowFlags(Qt::Window);
             showFullScreen();
@@ -111,10 +109,21 @@ void HHVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
 void HHVideoWidget::RecieveAlarm(const QVariant& data)
 {
     HHAlarm alarm=data.value<HHAlarm>();
-    m_rect=QRect(alarm.coordinate[0],alarm.coordinate[1],alarm.coordinate[2],alarm.coordinate[3]);
-    m_type=HHVideoAlarm::cartypeString(alarm);
+    m_rect.rect=QRect(alarm.coordinate[0],alarm.coordinate[1],alarm.coordinate[2],alarm.coordinate[3]);
+    m_rect.type=HHVideoAlarm::cartypeString(alarm);
     isshow=true;
-    QTimer::singleShot(2000, this, SLOT(setisshow()));
+    QTimer::singleShot(3000, this, SLOT(setisshow()));
+
+    if(alarm.image_id !=m_curimageid)
+    {
+        m_rects.clear();
+        m_rects.append(m_rect);
+        m_curimageid=alarm.image_id;
+    }else
+    {
+        m_rects.append(m_rect);
+    }
+
     update();
 }
 

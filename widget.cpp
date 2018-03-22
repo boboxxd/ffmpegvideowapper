@@ -11,7 +11,7 @@ Widget::Widget(QWidget *parent) :
 { 
     qDebug()<<"Widget::Widget(QWidget *parent)";
     stream =new HHVideoStream; 
-    stream->setUrl("rtsp://admin:ad53937301@122.192.0.173:554/h264/ch1/main/av_stream");
+    stream->setUrl("rtsp://admin:ad53937301@49.91.240.44:554/h264/ch1/main/av_stream");
     videowidget=new HHVideoWidget(this);
     videowidget->setStream(stream);
     alarm=new HHVideoAlarm;
@@ -20,7 +20,7 @@ Widget::Widget(QWidget *parent) :
     alarm->Login();
     stream->startStream();
 
-    QHBoxLayout *layout=new QHBoxLayout(this);
+    auto *layout=new QHBoxLayout(this);
 
     btn1=new QPushButton(this);
     btn2=new QPushButton(this);
