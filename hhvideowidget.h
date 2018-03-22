@@ -10,17 +10,21 @@
 #include <QRect>
 #include <QTimer>
 
+struct ARect{
+    QRect rect;
+    QString type;
+};
+
 class HHVideoWidget : public QOpenGLWidget
 {
     Q_OBJECT
 public:
-    HHVideoWidget(QWidget *parent=0);
+    explicit  HHVideoWidget(QWidget *parent= nullptr);
     void setStream(HHVideoStream *stream);
     void setAlarm(HHVideoAlarm *alarm);
-    void paintEvent(QPaintEvent *e);
-    void mouseDoubleClickEvent(QMouseEvent *e);
-    ~HHVideoWidget();
-    void closeEvent(QCloseEvent *event);
+    void paintEvent(QPaintEvent *e) override;
+    void mouseDoubleClickEvent(QMouseEvent *e) override;
+    void closeEvent(QCloseEvent *event) override;
     void disconnectFromStream();
     void disconnectFromAlarm();
 public slots:
@@ -32,11 +36,10 @@ private:
     HHVideoStream *m_stream;
     HHVideoAlarm *m_alarm;
     QImage image;
-    int m_width,m_height;
-
-    QRect m_rect;
-    QString m_type;
     bool isshow;
+    ARect m_rect;
+    QVector<ARect> m_rects;
+    int m_curimageid;
 };
 
 #endif // HHVIDEOWIDGET_H
